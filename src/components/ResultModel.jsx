@@ -6,8 +6,8 @@ const ResultModel = forwardRef(function ResultModel(
 ) {
   const userLost=remaningTime<=0;
   const formattedRemainingTime=(remaningTime/1000).toFixed(2);
-  //console.log(formattedRemainingTime);
-  const score=Math.round(1-remaningTime/(targetTime*1000))*100
+  console.log(remaningTime, targetTime);
+  const score=(1-remaningTime/(targetTime*1000))*100
   return (
     <dialog ref={ref} className="result-modal" onClose={onReset}>
       {userLost && <h2>you Lost</h2>}
